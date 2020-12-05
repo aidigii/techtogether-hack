@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 
-export default MoodMenu(props){
+export default function MoodMenu(props){
 
     return(
         <div>

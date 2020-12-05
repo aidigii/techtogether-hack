@@ -19,10 +19,6 @@ app.use(express.json())
 
 // END POINTS
 
-app.get('/', (request, response) => {
-  response.send('<h1> Hello world!</h1>')
-
-})
 
 
 
