@@ -1,11 +1,42 @@
-import React, { useState, useEffect } from "react";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 
-export default Track(props){
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 345,
+  },
+});
 
-    return(
-        <div>
-        <h2> Tracks</h2>
-        </div>
-    )
+export default function Track(props) {
+  const classes = useStyles();
+
+  return (
+    <Card className={classes.root}>
+    <CardActionArea>
+      <CardMedia
+        className={classes.media}
+      />
+      <img src={props.image} alt="thumbnail" width="300" height="300"/>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+        {props.title}
+        </Typography>
+
+      </CardContent>
+    </CardActionArea>
+    <CardActions>
+      <Button size="small" color="primary">
+        {props.artist}
+      </Button>
+    </CardActions>
+  </Card>
+  );
 }
