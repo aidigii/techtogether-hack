@@ -16,9 +16,82 @@ app.use(express.static('build'))
 //eases use of json
 app.use(express.json())
 
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 
 // END POINTS
+// app.get('/example', (request, response) => {
 
+//   const title = request.body.title //"kiss the rain"
+
+
+//   try{
+
+//     //chaining
+
+//     axios.get('https://shazam.p.rapidapi.com/search', {
+//       params: {
+//         'term': title,
+//         'limit': 1,
+//       },
+//       headers: {
+//         'x-rapidapi-key' : '6687921d10msh8ecacb0330016bep1c9c74jsnbdbe105272ca',
+//         'x-rapidapi-host' : 'shazam.p.rapidapi.com',
+//         'useQueryString' : true, 
+//       }
+//     })
+//     .then(function (res) {
+//       //response.json(response.data.tracks.hits);
+
+//       const send_data = {
+//         "title": res.data.tracks.hits[0].track.title,
+//       }
+//       response.json(send_data)
+//     })
+    
+//   }catch(error){
+//     console.log(error)
+//   }
+
+//   //response.json(title)
+
+// })
+
+
+// app.get('/get_songs', async (request, response) => {
+
+//   //front end will send you the string "happy"
+//   const mood = request.body // user input
+
+//   /**
+//    * request.body is going to be 
+//    * {
+//    *  "mood": "happy"
+//    * }
+//    * 
+//    * "happy" <--
+//    */
+
+//   try{
+
+//     //put code here
+//       const cityRef = db.collection('moods').doc();
+//       const doc = await cityRef.get();
+//       if (!doc.exists) {
+//         console.log('No such document!');
+//       } else {
+//         console.log('Document data:', doc.data());
+//       }
+
+//   }catch(error){
+//     console.log(error)
+//   }
+
+//   response.send(`<h1>completed</h1>`)
+
+// })
 
 
 
